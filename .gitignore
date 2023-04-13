@@ -30,4 +30,4 @@ Client/node_modules/
 Client/package-lock.json
 Client/dist/
 
-.vite/
+.vite/deps_temp_7cb60294/
