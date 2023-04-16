@@ -1,23 +1,17 @@
-// import Hero from './Hero';
 import NavBar from './NavBar';
 import HomeScreen from './HomeScreen';
 import About from './About';
-// import Tech from './Tech';
-// import Experience from './Experience';
-// import Works from './Works';
-// import Contact from './Contact';
-// import LeftCol from './LeftCol';
-// import RightCol from './RightCol';
+import LandingPage from './LandingPage';
+import Market_Info from './Market_Info';
+import Contact from './Contact';
+import Tutorials from './Tutorials';
 
 export {
-  // Hero,
   NavBar,
   HomeScreen,
   About,
-  // Tech,
-  // Experience,
-  // Works,
-  // Contact,
-  // LeftCol,
-  // RightCol,
+  LandingPage,
+  Market_Info,
+  Contact,
+  Tutorials,
 }

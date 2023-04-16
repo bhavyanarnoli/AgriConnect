@@ -1,6 +1,7 @@
 import React from 'react'
 import {Tilt} from 'react-tilt'
 import {motion} from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 import {styles} from '../styles';
 import {services} from '../constants';
@@ -10,31 +11,31 @@ import { SectionWrapper } from '../hoc';
 const ServiceCard = ({ index, title, icon }) => (
     
 <Tilt className='xs:w-[300px] w-full h-[400px]'>
-  <motion.div
-    variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-    className='w-full p-4 rounded-[20px] shadow-card'
-    style={{ maxWidth: "350px", margin: "auto", height: "100%" }}
-  >
-    <div
-      options={{
-        max: 45,
-        scale: 1,
-        speed: 450,
-      }}
-      className='bg-primary rounded-[20px] py-5 px-12 h-full flex justify-evenly items-center flex-col'
+  <Link to={title === 'Real-Time Market Information' ? '/market-info' : title === 'Connect With Farmers' ? '/connect-with-farmers' : '/tutorials'}>
+    <motion.div
+      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+      className='w-full p-4 rounded-[20px] shadow-card'
+      style={{ maxWidth: "350px", margin: "auto", height: "100%" }}
     >
-      <h3 className='text-white text-[20px] py-4 font-light text-center'>
-        {title}
-      </h3>
-
-      <img
-        src={icon}
-        alt='web-development'
-        className='w-30 h-30 object-contain'
-      />
-
-    </div>
-  </motion.div>
+      <div
+        options={{
+          max: 45,
+          scale: 1,
+          speed: 450,
+        }}
+        className='bg-primary rounded-[20px] py-5 px-12 h-full flex justify-evenly items-center flex-col'
+      >
+        <h3 className='text-white text-[20px] py-4 font-light text-center'>
+          {title}
+        </h3>
+        <img
+          src={icon}
+          alt='web-development'
+          className='w-30 h-30 object-contain'
+        />
+      </div>
+    </motion.div>
+  </Link>
 </Tilt>
 
 );
