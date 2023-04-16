@@ -2,6 +2,12 @@ import {
     information,
     connect,
     tutorials,
+    sunny_image,
+    mostly_sunny_image,
+    partly_cloudy_image,
+    sunny_audio,
+    mostly_sunny_audio,
+    partly_cloudy_audio,
   } from "../assets";
   
   export const navLinks = [
@@ -39,60 +45,51 @@ import {
     
   ];
   
-  // const experiences = [
-  //   {
-  //     title: "React.js Developer",
-  //     company_name: "Starbucks",
-  //     icon: starbucks,
-  //     iconBg: "#383E56",
-  //     date: "March 2020 - April 2021",
-  //     points: [
-  //       "Developing and maintaining connect applications using React.js and other related technologies.",
-  //       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //       "Implementing responsive design and ensuring cross-browser compatibility.",
-  //       "Participating in code reviews and providing constructive feedback to other developers.",
-  //     ],
-  //   },
-  //   {
-  //     title: "React Native Developer",
-  //     company_name: "Tesla",
-  //     icon: tesla,
-  //     iconBg: "#E6DEDD",
-  //     date: "Jan 2021 - Feb 2022",
-  //     points: [
-  //       "Developing and maintaining connect applications using React.js and other related technologies.",
-  //       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //       "Implementing responsive design and ensuring cross-browser compatibility.",
-  //       "Participating in code reviews and providing constructive feedback to other developers.",
-  //     ],
-  //   },
-  //   {
-  //     title: "connect Developer",
-  //     company_name: "Shopify",
-  //     icon: shopify,
-  //     iconBg: "#383E56",
-  //     date: "Jan 2022 - Jan 2023",
-  //     points: [
-  //       "Developing and maintaining connect applications using React.js and other related technologies.",
-  //       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //       "Implementing responsive design and ensuring cross-browser compatibility.",
-  //       "Participating in code reviews and providing constructive feedback to other developers.",
-  //     ],
-  //   },
-  //   {
-  //     title: "Full stack Developer",
-  //     company_name: "Meta",
-  //     icon: meta,
-  //     iconBg: "#E6DEDD",
-  //     date: "Jan 2023 - Present",
-  //     points: [
-  //       "Developing and maintaining connect applications using React.js and other related technologies.",
-  //       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //       "Implementing responsive design and ensuring cross-browser compatibility.",
-  //       "Participating in code reviews and providing constructive feedback to other developers.",
-  //     ],
-  //   },
-  // ];
+  const experiences = [
+    {
+      title: "DAY 1 - Irrigation",
+      company_name: "Sunny",
+      icon: sunny_image,
+      iconBg: "#383E56",
+      date: "41°C",
+      audio : sunny_audio,
+      points: [
+        "With temperatures above 40C, it is important to keep the crops well hydrated. Watering should be done either early in the morning or late in the evening to avoid excessive evaporation"
+      ],
+    },
+    {
+      title: "DAY 2 - Shade & Harvest",
+      company_name: "Mostly Sunny",
+      icon: mostly_sunny_image,
+      iconBg: "#E6DEDD",
+      date: "40°C",
+      audio : mostly_sunny_audio,
+      points: [
+        "For crops that are sensitive to direct sunlight, you can provide shade using nets or other materials to protect them from the sun's intense heat",
+      ],
+    },
+    {
+      title: "DAY 3 - Stress Monitoring",
+      company_name: "Partly Cloudy",
+      icon: partly_cloudy_image,
+      iconBg: "#383E56",
+      date: "37°C",
+      audio : partly_cloudy_audio,
+      points: [
+        "If there are any crops that are ripe and ready to harvest, it is best to do so in the early morning hours before the temperature starts to rise",
+      ],
+    },
+    // {
+    //   title: "Checking Irrigation",
+    //   company_name: "Partly Cloudy",
+    //   // icon: meta,
+    //   iconBg: "#E6DEDD",
+    //   date: "34°C",
+    //   points: [
+    //     "The farmer should ensure that the irrigation systems are functioning properly and that there are no leaks or clogs that could lead to water wastage",
+    //   ],
+    // },
+  ];
   
   // // const testimonials = [
   // //   {
@@ -171,4 +168,4 @@ import {
   // ];
   
   // export { services, experiences, projects }; 
-export {services};
+export {services,experiences,};

@@ -19,13 +19,13 @@ const HomeScreen = () => {
 
     <section className={`relative w-full h-screen mx-auto`}>
 
-      <div class="flex items-center justify-center h-screen">
+      <div className="flex items-center justify-center h-screen">
 
-        <div class="bg-[#395C4D] p-4 rounded-3xl w-3/5 h-3/5 xs:h-1/4 sm:h-1/3 md:h-96 lg:h-1/2 xl:h-3/5 ">
+        <div className="bg-[#395C4D] p-4 rounded-3xl w-3/5 h-3/5 xs:h-1/4 sm:h-1/3 md:h-96 lg:h-1/2 xl:h-3/5 ">
 
           <div className='flex flex-wrap gap-20 items-center justify-between'>
 
-            <div className=''>
+            <div>
 
               <div className='text-5xl font-light'>Tempertautre</div>
               <div className='text-5xl font-light'>in your area</div>

@@ -22,7 +22,7 @@ import { Route, Routes as BaseRoutes } from "react-router-dom";
 function App() {
  
   return (
-    <div className='bg-gradient-to-r from-green-800 to-teal-700' >
+    <div className='bg-gradient-to-br from-green-800 to-teal-700' >
       <NavBar />
       <BaseRoutes>
       

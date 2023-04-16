@@ -1,5 +1,5 @@
 import React from 'react';
-import {HomeScreen,About } from '.';
+import {HomeScreen,About,FarmingForecast } from './index';
 
 const LandinPage = () => {
   return (
@@ -9,6 +9,7 @@ const LandinPage = () => {
       </div>
       <HomeScreen />
       <About />
+      <FarmingForecast />
     </div>
 
   );

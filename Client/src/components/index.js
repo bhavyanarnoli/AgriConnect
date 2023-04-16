@@ -5,6 +5,7 @@ import LandingPage from './LandingPage';
 import Market_Info from './Market_Info';
 import Contact from './Contact';
 import Tutorials from './Tutorials';
+import FarmingForecast from './FarmingForecast';
 
 export {
   NavBar,
@@ -14,4 +15,5 @@ export {
   Market_Info,
   Contact,
   Tutorials,
+  FarmingForecast,
 }

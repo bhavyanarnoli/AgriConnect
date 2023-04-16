@@ -11,7 +11,7 @@ module.exports = {
         button_hover: "#6B911B",
       },
       boxShadow: {
-        card: "0px 35px 120px -15px #211e35",
+        card: "0px 35px 120px -15px #013220",
       },
       screens: {
         xs: "450px",
