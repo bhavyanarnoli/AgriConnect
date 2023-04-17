@@ -15,28 +15,41 @@ import { styles } from '../styles'
 // import { fadeIn, textVariant } from '../utils/motion'
 
 const HomeScreen = () => {
-  return (
+  const handleSubmit = (event) =>{
+    event.preventDefault();
+    const {weather} = event.target;
+    console.log(weather.value);
+  }
+   return (
 
     <section className={`relative w-full h-screen mx-auto`}>
 
       <div className="flex items-center justify-center h-screen">
 
-        <div className="bg-[#395C4D] p-4 rounded-3xl w-3/5 h-3/5 xs:h-1/4 sm:h-1/3 md:h-96 lg:h-1/2 xl:h-3/5 ">
+        <div className="bg-[#86a541] p-4 rounded-3xl w-3/5 h-3/5 xs:h-1/4 sm:h-1/3 md:h-96 lg:h-1/2 xl:h-3/5 ">
 
-          <div className='flex flex-wrap gap-20 items-center justify-between'>
+          <div className='flex h-full items-center justify-between'>
 
-            <div>
+            <div className='text-[54px] -translate-x-1/4'>
 
-              <div className='text-5xl font-light'>Tempertautre</div>
-              <div className='text-5xl font-light'>in your area</div>
-              <div className='text-3xl font-thin'>Slightly Coool</div>
+              <div className='font-semibold'>Tempertautre</div>
+              <div className='font-semibold'>in your area</div>
+              <div className='text-2xl font-light uppercase leading-[39px] tracking-[0.1rem]'>Slightly Coool</div>
+              <form onSubmit={handleSubmit} className='flex items-center py-4' >
+                <input name='weather' className='bg-transparent border-solid border-white border-2  rounded-md p-4 text-base text-white focus:outline-none' type="text" placeholder='' />
+                {/* <button type='submit' className='px-2' >
 
+                <img className='invert' src="https://img.icons8.com/ios/50/null/arrow--v1.png" />
+
+
+                </button> */}
+              </form>
 
             </div>
-            <div className='text-10xl font-medium'>19°C</div>
+            <div className='text-10xl scale-150 font-medium translate-x-1/4'>19°C</div>
 
           </div>
-      
+
 
         </div>
 
