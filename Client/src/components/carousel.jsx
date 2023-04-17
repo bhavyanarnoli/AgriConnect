@@ -4,13 +4,14 @@ import { TiChevronLeftOutline, TiChevronRightOutline } from 'https://cdn.skypack
 import styles from "./carousel.module.scss";
 const CARDS = 3;
 const MAX_VISIBILITY = 3;
+
 export default function CarouselWrapper() {
     return (
         <div className={styles.app}>
             <div className='flex flex-col justify-start'>
-                <div className='text-3xl py-8'>Real-Market Information</div>
-                <div className='py-8'>Information bought from credible sources, <br /> rated from real customers who used this site</div>
-                <button className='bg-[#ffffff] text-left text-black w-max p-2 rounded-3xl underline my-4'> Check out more reviews</button>
+                <div className='text-5xl py-8'>Real-Market Information</div>
+                <div className='text-2xl py-8'>Information bought from credible sources, <br /> rated from real customers who used this site</div>
+                <button className='text-left w-max p-2 rounded-3xl underline my-4'> Check out more reviews</button>
             </div>
             <Carousel>
                     <Card price={80} noOfstars={2} title={'Tomato'} content='
@@ -44,7 +45,7 @@ const stars = (noOfstars)=>{
     return arr_starts;
 }
 const Card = ({ title, content, price, noOfstars }) => (
-    <div className={styles.card}>
+    <div className={styles.card} >
         <div className=' '>
             <div className=''>
                 <p className='text-3xl text-[#212936] text-right font-extrabold'>₹{price}/kg</p>

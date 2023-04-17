@@ -3,63 +3,44 @@ import Loamy from '../assets/Loamy.png'
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 import { useState, useEffect } from 'react'
 
-function Tutorials() {
-
+function Tutorials({language}) {
+  console.log(language);
   const [weather, setWeather] = useState(null)
   const [prev, setprev] = useState(1)
   const [next, setnext] = useState(1)
-  const [data, setData] = useState([
-    {
-      id: 1,
-      header: "Loamy Soul",
-      text: "Loamy soil is ideal for growing several crops such as wheat, sugarcane, cotton, pulses, and oilseeds.",
-      sub: "Water everyday so that the roots appear wet all the time.",
-      temp: "loda",
-      fert: "loda",
-      pest: "loda",
-      tech: "loda",
-      img: Loamy
-    },
-    {
-      id: 2,
-      header: "Clay Soul",
-      text: "Clay soil is ideal for growing several crops such as wheat, sugarcane, cotton, pulses, and oilseeds.",
-      sub: "Water everyday so that the roots appear wet all the time.",
-      temp: "loda",
-      fert: "loda",
-      pest: "loda",
-      tech: "loda",
-      img: Loamy
-    },
-    {
-      id: 3,
-      header: "Sandy Soul",
-      text: "Sandy soil is ideal for growing several crops such as wheat, sugarcane, cotton, pulses, and oilseeds.",
-      sub: "Water everyday so that the roots appear wet all the time.",
-      temp: "loda",
-      fert: "loda",
-      pest: "loda",
-      tech: "loda",
-      img: Loamy
-    },
-    {
-      id: 4,
-      header: "Silt Soul",
-      text: "Silt soil is ideal for growing several crops such as wheat, sugarcane, cotton, pulses, and oilseeds.",
-      sub: "Water everyday so that the roots appear wet all the time.",
-      temp: "loda",
-      fert: "loda",
-      pest: "loda",
-      tech: "loda",
-      img: Loamy
-    }
-  ])
+  const [data, setData] = useState([]);
+
   useEffect(() => {
-    getWeather().then((data) => {
-      setWeather(data)
-      console.log(data)
-    })
-  }, [])
+    if(language === "English"){
+      setData([
+        {
+          id: 1,
+          header: "Loamy Soil",
+          text: "Loamy soil is ideal for growing several crops such as wheat, sugarcane, cotton, pulses, and oilseeds.",
+          sub: "Water everyday so that the roots appear wet all the time.",
+          temp: "loda",
+          fert: "loda",
+          pest: "loda",
+          tech: "loda",
+          img: Loamy,
+        },
+      ]);
+    } else if (language === "Hindi"){
+      setData([
+        {
+          id: 1,
+          header: "दोमट मिटटी",
+          text: "दोमट मिटटी गेहूं, गन्ना, कपास, दालें और तेलसीधे जैसी कई फसलों के लिए आदर्श होती है।",
+          sub: "हर दिन पानी दीजिए ताकि जड़ें हमेशा गीली नजर आएं।",
+          temp: "loda",
+          fert: "loda",
+          pest: "loda",
+          tech: "loda",
+          img: Loamy,
+        },
+      ]);
+    }
+  }, [language]);
 
   return (
     <div
@@ -114,28 +95,18 @@ function Tutorials() {
 
 export default Tutorials
 
-
-async function getWeather() {
-  const response = await fetch(
-    "https://api.weatherstack.com/prev?access_key=c88e89f33061a898c5c4c93ec9659a38&query=New York"
-  );
-  const data = await response.json();
-  console.log(data);
-  return data;
-}
-
 function TutorialCard({ id, header, text, sub, temp, fert, pest, tech , img}) {
   return (
     <div id={id} className='flex carousel-item relative  w-full items-center justify-center h-3/4'>
-      <div class="p-10 w-1/3 ">
-        <img src={img} class="object-fill brightness-50 hover:animate-brightness-50-to-100" />
+      <div className="p-10 w-1/3 ">
+        <img src={img} className="object-fill brightness-50 hover:animate-brightness-50-to-100" />
       </div>
-      <div class="flex flex-col h-full font-light w-1/4 pr-10">
-        <div class="p-4">
-          <p class="text-3xl">Suggestions</p>
+      <div className="flex flex-col h-full font-light w-1/4 pr-10">
+        <div className="p-4">
+          <p className="text-3xl">Suggestions</p>
         </div>
-        <div class="p-4 flex flex-col gap-4 text-lg">
-          <p class="text-5xl font-normal">{header}</p>
+        <div className="p-4 flex flex-col gap-4 text-lg">
+          <p className="text-5xl font-normal">{header}</p>
           <p>{text}</p>
           <p>{sub}</p>
           <div>
