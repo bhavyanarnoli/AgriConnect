@@ -5,7 +5,7 @@ import Cards from './Cards.jsx';
 import { useState, useEffect } from 'react';
 import farmer1 from '../assets/farmer1.png';
 import farmer2 from '../assets/farmer2.png';
-function Market_Info() {
+function Market_Info({language}) {
   const [reviews, setReviews] = useState([
     {
       id: 1,
@@ -33,13 +33,11 @@ function Market_Info() {
     }
   ])
 
-
   const [reviewWindow, setReviewWindow] = useState(false);
-
   const [reviewName, setReviewName] = useState('');
   const [reviewAuthor, setReviewAuthor] = useState('');
   const [reviewContent, setReviewContent] = useState('');
-  const [reviewStars, setReviewStars] = useState(0);
+  // const [reviewStars, setReviewStars] = useState(0);
 
   const [rating, setRating] = useState(0);
 
@@ -53,6 +51,12 @@ function Market_Info() {
   useEffect(() => {
     console.log({ reviews });
   }, [reviews, setReviewWindow])
+  console.log(language)
+
+  const heading = language === "English" ? "Add Information about your Co-Farmers" : "कृपया अपने सह-किसानों के बारे में जानकारी जोड़ें।";
+  const subtext1 = language === "English" ? "Tell us about your co-farmers and their farming practices. Share your" : "हमें अपने सहकर्मियों और उनके कृषि प्रथाओं के बारे में बताएं। उनके उत्पादों ";
+  const subtext2 = language === "English" ? "experience with their products and the quality you have recieved." : "के साथ आपके अनुभव को साझा करें और उनकी गुणवत्ता के बारे में बताएं।";
+  const enter = language ==="English" ? "Enter" : "अनुभव दर्ज करें"
 
   return (
     <section
@@ -71,14 +75,13 @@ function Market_Info() {
         <div className="flex flex-wrap gap-20 items-center justify-between">
           <div>
             <div className="text-5xl font-light text-center">
-              Add Information about your Co-Farmers
+              {heading}
             </div>
 
             <br></br>
             <br></br>
             <div className="text-2xl font-thin text-center">
-              Tell us about your co-farmers and their farming practices. Share
-              your
+              {subtext1}
             </div>
             <div>
               <img
@@ -97,7 +100,7 @@ function Market_Info() {
               />
             </div>
             <div className="text-2xl font-thin text-center">
-              experience with their products and the quality you have recieved
+              {subtext2}
             </div>
             <div className="flex justify-center mt-10">
               <button className="bg-green-500 hover:bg-green-600 text-white py-4 px-10 rounded-full"
@@ -105,7 +108,7 @@ function Market_Info() {
                   e.stopPropagation();
                   setReviewWindow(true);
                 }}>
-                Enter
+                {enter}
               </button>
               <div className={`
                 ${reviewWindow ? 'flex' : 'hidden'}

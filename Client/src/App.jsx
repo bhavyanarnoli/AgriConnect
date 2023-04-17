@@ -1,4 +1,4 @@
-import { NavBar, LandingPage, Market_Info, Contact, Tutorials } from './components';
+import { NavBar, LandingPage, Contact, Tutorials } from './components';
 import { Route, Routes as BaseRoutes } from "react-router-dom";
 import { useState } from 'react';
 import Carousel from "../src/components/carousel";
@@ -18,7 +18,7 @@ function App() {
 
         <Route path="/" element={<LandingPage language={language} />} />
         <Route path="/market-info" element={<Carousel language={language} />} />
-        <Route path="/connect-with-farmers" element={<Contact />} />
+        <Route path="/connect-with-farmers" element={<Contact language={language} />} />
         <Route path="/tutorials" element={
           <div className="relative z-0 bg-transparent">
             <div className="bg-heo-pattern bg-cover bg-no-repeat bg-center"></div>

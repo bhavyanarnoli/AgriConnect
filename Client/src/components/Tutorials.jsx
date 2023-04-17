@@ -2,6 +2,7 @@ import React from 'react'
 import Loamy from '../assets/Loamy.png'
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
 function Tutorials({ language }) {
   console.log(language);
@@ -22,16 +23,25 @@ function Tutorials({ language }) {
           fert: "Ammonium Nitrate, Urea, Ammonium Sulfate",
           pest: "Glyphosate,Chlorpyrifos, Metolachlor, Trifluralin",
           img: Loamy,
+          link : "https://www.youtube.com/watch?v=2fbpOwFZoaA&t=51s&ab_channel=AgricultureandTechnology",
         },
         {
           id: 2,
           header: "Clay Soil",
           text: "Clay soil is ideal for growing several crops such as wheat, sugarcane, cotton, pulses, and oilseeds.",
           sub: "Water everyday so that the roots appear wet all the time.",
+<<<<<<< Updated upstream
           temp: "50°F to 75°F (10°C to 24°C)",
           fert: "Organic Compost, Pine Bark, Composted Leaves, Gypsum",
           pest: "Chlorothalonil, Fludioxonil, Cyprodinil, Boscalid",
           img: Loamy
+=======
+          temp: "50°F to 75°F (10°C to 24°C",
+          fert: "loda",
+          pest: "Chlorothalonil,Fludioxonil,Cyprodinil,Boscalid",
+          img: Loamy,
+          link : "https://www.youtube.com/watch?v=quYI2I-CogQ&ab_channel=AgricultureandTechnology",
+>>>>>>> Stashed changes
         },
         {
           id: 3,
@@ -41,7 +51,13 @@ function Tutorials({ language }) {
           temp: "16°C to 29°C",
           fert: "Compost and manure",
           pest: "Methomyl,Imidacloprid,Propiconazole,Azoxystrobin",
+<<<<<<< Updated upstream
           img: Loamy
+=======
+          tech: "loda",
+          img: Loamy,
+          link : "https://www.youtube.com/watch?v=hV2d-JAuzaM&ab_channel=AgricultureandTechnology",
+>>>>>>> Stashed changes
         },
         {
           id: 4,
@@ -49,11 +65,18 @@ function Tutorials({ language }) {
           text: "Silt soil is ideal for growing several crops such as wheat, sugarcane, cotton, pulses, and oilseeds.",
           sub: "Water everyday so that the roots appear wet all the time.",
           temp: "55°F to 80°F (13°C to 27°C)",
+<<<<<<< Updated upstream
           fert: "Ammonium Sulfate, Urea, Calcium Nitrate",
           pest: "Methomyl, Imidacloprid, Propiconazole, Azoxystrobin",
           img: Loamy
+=======
+          fert: "loda",
+          pest: "Methomyl,Imidacloprid,Propiconazole,Azoxystrobin",
+          tech: "loda",
+          img: Loamy,
+          link : "https://www.youtube.com/watch?v=6NymCktanJA&ab_channel=AgricultureandTechnology",
+>>>>>>> Stashed changes
         }
-
       ]);
     } else if (language === "अंग्रेज़ी") {
       setData([
@@ -63,7 +86,11 @@ function Tutorials({ language }) {
           text: "दोमट मिटटी गेहूं, गन्ना, कपास, दालें और तेलसीधे जैसी कई फसलों के लिए आदर्श होती है।",
           sub: "हर दिन पानी दीजिए ताकि जड़ें हमेशा गीली नजर आएं।",
           temp: "55°F to 80°F (13°C to 27°C)",
+<<<<<<< Updated upstream
           fert: "अमोनियम नाइट्रेट, यूरिया और अमोनियम सल्फेट ट्रिपल सुपरफॉस्फेट और डायमोनियम फॉस्फेट पोटेशियम सल्फेट और पोटेशियम क्लोराइड जैविक खाद",
+=======
+          fert: "अमोनियम नाइट्रेट, यूरिया और अमोनियम सल्फेट",
+>>>>>>> Stashed changes
           pest: "मेथोमिल इमिडाक्लोप्रिड,प्रोपिकोनाज़ोल,एज़ोक्सिस्ट्रोबिन,रेत भरी मिट्टी",
           img: Loamy,
         },
@@ -131,6 +158,7 @@ function Tutorials({ language }) {
                 pest={item.pest}
                 tech={item.tech}
                 img={item.img}
+                link = {item.link}
               />
             )
           })
@@ -154,16 +182,22 @@ function Tutorials({ language }) {
 
 export default Tutorials
 
-function TutorialCard({ id, header, text, sub, temp, fert, pest, tech, img }) {
+function TutorialCard({ id, header, text, sub, temp, fert, pest, link, img }) {
   return (
     <div id={id} className='flex carousel-item relative  w-full items-center justify-center h-3/4'>
       <div className="p-10 w-1/3 ">
         <img src={img} className="object-fill brightness-50 hover:animate-brightness-50-to-100" />
       </div>
       <div className="flex flex-col h-full font-light w-1/4 pr-10">
+<<<<<<< Updated upstream
         {/* <div className="p-4">
           <p className="text-3xl">Suggestions</p>
         </div> */}
+=======
+        <div className="p-4">
+          {/* <p className="text-3xl">Suggestions</p> */}
+        </div>
+>>>>>>> Stashed changes
         <div className="p-4 flex flex-col gap-4 text-lg">
           <p className="text-5xl font-normal">{header}</p>
           <p>{text}</p>
@@ -180,11 +214,7 @@ function TutorialCard({ id, header, text, sub, temp, fert, pest, tech, img }) {
             <p>Pesticides</p>
             <div className='w-2/3 border-b'>{pest}</div>
           </div>
-          <div>
-            {/* <p>Technologies</p>
-            <div className='w-2/3 border-b'>{tech}</div> */}
-          </div>
-          <div className='w-2/3 p-3 mt-5 text-center border-2 rounded-xl'>
+          <div className='w-2/3 p-3 mt-5 text-center border-2 rounded-xl' onClick={() => window.location.href = link} >
             <p>View Tutorial</p>
           </div>
         </div>

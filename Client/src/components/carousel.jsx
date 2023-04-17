@@ -5,37 +5,33 @@ import styles from "./carousel.module.scss";
 const CARDS = 3;
 const MAX_VISIBILITY = 3;
 
-export default function CarouselWrapper() {
+export default function CarouselWrapper({ language }) {
+    const infoText = language === "English" ? "Real-Market Information" : "वास्तविक बाजार सूचना";
+    const infosubtext1 = language === "English" ? "Information from credible sources," : "विश्वसनीय स्रोतों से जानकारी";
+    const infosubtext2 = language === "English" ? "rated from real customers who used this site" : "जो वास्तविक ग्राहकों द्वारा इस साइट का उपयोग कर रहे हैं, की गई रेटिंग।";
+    const tomato = language === "English" ? "The price of tomatoes is high today due to the adverse weather conditions, which have led to a shortage in the supply of tomatoes" : "टमाटर की कीमत आज उच्च है क्योंकि विपरीत मौसम की स्थितियाँ हैं, जो टमाटर के आपूर्ति में कमी को लाया है।";
+    const wheat = language === "English" ? "The price of wheat is stable today because of favourable wather conditions for the growth of wheat." : "गेहूं का मूल्य आज स्थिर है क्योंकि गेहूं के विकास के लिए सुखद मौसम की स्थिति है।";
+    const carrot = language === "English" ? "The price of carrot is also stable today because of favourable weather conditions for the growth of carrot." : "गाजर की कीमत आज भी स्थिर है क्योंकि गाजर के विकास के लिए मौसम की सुनहरी स्थितियों के कारण।";
+
     return (
         <div className={styles.app}>
             <div className='flex flex-col justify-start'>
-                <div className='text-5xl py-8'>Real-Market Information</div>
-                <div className='text-2xl py-8'>Information bought from credible sources, <br /> rated from real customers who used this site</div>
-                <button className='text-left w-max p-2 border-2 rounded-3xl underline my-4'> Check out more reviews</button>
+                <div className='text-5xl py-8'>{infoText}</div>
+                <div className='text-2xl py-8'>{infosubtext1}<br /> {infosubtext2}</div>
+                <button className='text-left w-max p-2 border-2 rounded-3xl underline my-4' onClick={() => window.location.href = "https://agmarknet.gov.in/"}>
+                    {language === "English" ? "Check out more reviews" : "अधिक समीक्षाएँ देखें"}
+                </button>
+
             </div>
             <Carousel>
-                    <Card price={80} noOfstars={2} title={'Tomato'} content='
-                    
-                    The price of tomatoes is high today due to the adverse weather conditions, which have led to a shortage in the supply of tomatoes
-
-                    
-                    ' />
-                    <Card price={40} noOfstars={4} title={'Wheat'} content='
-                    
-                    The price of wheat is stable today because of favourable wather conditions for the growth of wheat.
-
-                    
-                    ' />
-                    <Card price={100} noOfstars={5} title={'Carrot'} content='
-                    
-                    The price of carrot is also stable today because of favourable weather conditions for the growth of carrot.
-
-                    
-                    ' />
+                    <Card price={80} noOfstars={2} title={language =="English" ?'Tomato' : "टमाटर"} content={tomato}/>
+                    <Card price={40} noOfstars={4} title={language =="English" ?'Wheat' : "गेहूँ"} content={wheat}/>
+                    <Card price={100} noOfstars={5} title={language =="English" ?'Carrot' : "गाजर"} content={carrot}/>
             </Carousel>
         </div>
     )
 }
+
 const stars = (noOfstars)=>{
     let arr_starts =[]
     for (let index = 0; index < noOfstars; index++) {

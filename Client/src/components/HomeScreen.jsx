@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const HomeScreen = () => {
+const HomeScreen = ({language}) => {
   const[weather,setweather] = useState();
   const  handleSubmit = async (event) =>{
     event.preventDefault();
@@ -24,6 +24,9 @@ const HomeScreen = () => {
     
     
   }
+
+  const temp = language === "English" ? "Temperature" : "तापमान";
+  const area = language === "English" ? "in your area" : "आपके क्षेत्र में";
    return (
 
     <section className={`relative w-full h-screen mx-auto`}>
@@ -36,9 +39,15 @@ const HomeScreen = () => {
 
             <div className='text-[54px] -translate-x-1/4'>
 
+<<<<<<< Updated upstream
               <div className='font-semibold'>Temperature</div>
               <div className='font-semibold'>in your area</div>
               <div className='text-2xl font-light uppercase leading-[39px] tracking-[0.1rem]'>Warm</div>
+=======
+              <div className='font-semibold'>{temp}</div>
+              <div className='font-semibold'>{area}</div>
+              {/* <div className='text-2xl font-light uppercase leading-[39px] tracking-[0.1rem]'>{!weather ? `Sunny` : `${weatherMessage}`}</div> */}
+>>>>>>> Stashed changes
               <form onSubmit={handleSubmit} className='flex items-center py-4' >
                 <input name='weather' className='bg-transparent border-solid border-white border-2  rounded-md p-4 text-base text-white focus:outline-none' type="text" placeholder='' />
               </form>
