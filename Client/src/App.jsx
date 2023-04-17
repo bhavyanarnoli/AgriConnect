@@ -18,15 +18,22 @@
 // export default App;
 import {NavBar,LandingPage,Market_Info,Contact,Tutorials} from './components';
 import { Route, Routes as BaseRoutes } from "react-router-dom";
-
+import { useState, useEffect } from 'react';
 function App() {
- 
+
+  const [language, setLanguage] = useState('English');
+
+  const handleLanguageChange = () => {
+    setLanguage(language === 'English' ? 'Hindi' : 'English');
+    // console.log(`Current language: ${language}. I am in app.jsx`);
+  };
+
   return (
     <div className='bg-gradient-to-br from-green-800 to-teal-700' >
-      <NavBar />
+      <NavBar language={language} onLanguageChange={handleLanguageChange} />
       <BaseRoutes>
       
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage language={language} />} />
         <Route path= "/market-info" element={<Market_Info />} />
         <Route path= "/contact-with-farmers" element={<Contact />} />
         <Route path= "/tutorials" element={<Tutorials />} />

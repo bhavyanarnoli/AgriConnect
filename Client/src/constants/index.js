@@ -24,8 +24,8 @@ import {
       title: "About",
     },
     {
-      id: "login",
-      title: "Login",
+      id: "language",
+      title: "Language",
     },
   ];
 

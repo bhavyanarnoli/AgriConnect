@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Tilt} from 'react-tilt'
 import {motion} from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 import {styles} from '../styles';
-import {services} from '../constants';
+// import {services} from '../constants';
+import {services as englishServices} from '../constants';
+import {services as hindiServices} from '../hinconstants';
 import {fadeIn, textVariant} from '../utils/motion'
 import { SectionWrapper } from '../hoc';
 
@@ -40,8 +42,12 @@ const ServiceCard = ({ index, title, icon }) => (
 
 );
 
-
-const About = () => {
+const About = ({ language }) => {
+  console.log(`Current language: ${language}. I am in About.jsx`);
+  const services = language === 'English' ? englishServices : hindiServices;
+  // console.log(`current services ${services}`);
+  console.log(services);
+  
   return (
     <>
 
@@ -49,27 +55,7 @@ const About = () => {
       <p className ={styles.sectionHeadText}>
       WHAT WE'RE PROVIDING</p>
 
-      {/* <h2 className={styles.sectionHeadText} >
-        Overview </h2> */}
-
-
     </motion.div>
-
-    {/* <motion.p 
-      variants={fadeIn("","",0.1,1)}
-      className="mt-4 text-red-50 text-[17px] max-w-3xl leading-[30px]">
-    </motion.p>
-
-    <motion.p 
-        variants={fadeIn("", "", 0.2, 1)}
-        className="mt-4 text-red-50 text-[17px] max-w-3xl leading-[30px] mb-8">
-      </motion.p>
-
-      <motion.p 
-        variants={fadeIn("", "", 0.2, 1)}
-        className="mt-4 text-red-50 text-[17px] max-w-3xl leading-[30px] mb-8">
-      </motion.p> */}
-
     <div className='mt-20 flex flex-wrap gap-20'>
 
       {services.map((services, index) => (
@@ -81,3 +67,4 @@ const About = () => {
 }
 
 export default SectionWrapper(About,"about")
+// export default About;

@@ -4,7 +4,10 @@ import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
 
-const NavBar = () => {
+const NavBar = ({language,onLanguageChange}) => {
+  const handleButtonClick = () => {
+    onLanguageChange();
+  };
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -66,8 +69,9 @@ const NavBar = () => {
         </Link>
 
         <ul className=' list-none hidden sm:flex flex-row gap-10 items-center pl-24'>
+
           {navLinks.map((nav) => (
-            nav.title !="Login" ? (<li
+            nav.title !="Language" ? (<li
               key={nav.id}
               className={`${
                 active === nav.title ? "text-white" : "text-white"
@@ -75,11 +79,12 @@ const NavBar = () => {
               onClick={() => setActive(nav.title)}
             >
             <div className="group"> <a href={`#${nav.id}`} className="group-hover:opacity-100"> <span className="text-white opacity-100 group-hover:text-white"></span>{nav.title} </a> </div>
-              </li>) : <li>
-            <a       
-            className="text-white border-2 border-login_button rounded-2xl px-4 py-1 hover:text-button_hover  hover:cursor-pointer transition-all" >Login
-            </a>
-            </li>
+              </li>) : 
+              <div>
+                <button className="text-white border-2 border-login_button rounded-2xl px-4 py-1 hover:text-button_hover  hover:cursor-pointer transition-all" onClick={handleButtonClick}>
+                  <div>{language}</div>
+                </button>
+            </div>
           ))}
 
         </ul>
