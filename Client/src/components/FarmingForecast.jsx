@@ -42,7 +42,7 @@ const ExperienceCard = ({ experience }) => {
 
       icon={
         <div className='flex justify-center items-center w-full h-full'
-        onClick={handleIconClick}
+        onMouseEnter={handleIconClick}
         onMouseLeave={handleIconMouseLeave}
         >
           <img

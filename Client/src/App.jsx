@@ -35,7 +35,7 @@ function App() {
       
         <Route path="/" element={<LandingPage language={language} />} />
         <Route path= "/market-info" element={<Market_Info />} />
-        <Route path= "/connectt-with-farmers" element={<Contact />} />
+        <Route path= "/connect-with-farmers" element={<Contact />} />
         <Route path= "/tutorials" element={<Tutorials />} />
 
 

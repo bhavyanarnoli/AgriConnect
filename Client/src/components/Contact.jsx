@@ -1,167 +1,49 @@
-// import React, { useRef, useState } from "react";
-// import { motion } from "framer-motion";
-// import emailjs from "@emailjs/browser";
+import {React} from 'react'
+import Leaf from '../assets/Leaf.png';
+import cup from '../assets/cup.png';
+import Cards from './Cards.jsx';
 
-// import { styles } from "../styles";
-// import { EarthCanvas } from "./canvas";
-// import { SectionWrapper } from "../hoc";
-// import { slideIn } from "../utils/motion";
-
-// const Contact = () => {
-//   const formRef = useRef();
-//   const [form, setForm] = useState({
-//     name: "",
-//     email: "",
-//     message: "",
-//   });
-
-//   const [loading, setLoading] = useState(false);
-
-//   const handleChange = (e) => {
-//     const { target } = e;
-//     const { name, value } = target;
-
-//     setForm({
-//       ...form,
-//       [name]: value,
-//     });
-//   };
-
-//   const playSound = ()=>{
-//     var audio = document.getElementById('a1');
-//     audio.play();
-
-//   }
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     setLoading(true);
-
-//     emailjs
-//       .send(
-//         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-//         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-//         {
-//           from_name: form.name,
-//           to_name: "JavaScript Mastery",
-//           from_email: form.email,
-//           to_email: "sujata@jsmastery.pro",
-//           message: form.message,
-//         },
-//         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-//       )
-//       .then(
-//         () => {
-//           setLoading(false);
-//           alert("Thank you. I will get back to you as soon as possible.");
-
-//           setForm({
-//             name: "",
-//             email: "",
-//             message: "",
-//           });
-//         },
-//         (error) => {
-//           setLoading(false);
-//           console.error(error);
-
-//           alert("Ahh, something went wrong. Please try again.");
-//         }
-//       );
-//   };
-
-//   return (
-//     <div
-//       className={`xl:mt-12 flex xl:flex-row flex-col-reverse  overflow-hidden`}
-//     >
-//       <motion.div
-//         variants={slideIn("left", "tween", 0.2, 1)}
-//         className='flex-[0.75] px-8  rounded-2xl'
-//       >
-//         <p className={styles.sectionSubText}>Get in touch</p>
-//         <h3 className={styles.sectionHeadText}>Contact.</h3>
-
-//         <form
-//           ref={formRef}
-//           onSubmit={handleSubmit}
-//           className='mt-6 flex flex-col gap-7 '
-//         >
-//           <label className='flex flex-col '>
-//             <span className='text-white font-medium mb-4'>Your Name</span>
-//             <input
-//               type='text'
-//               name='name'
-//               value={form.name}
-//               onChange={handleChange}
-//               placeholder="Please Enter your Name "
-//               className='py-4 px-6 placeholder:text-red-400 text-white rounded-lg outline-none border-none font-medium opacity-70'
-//             />
-//           </label>
-//           <label className='flex flex-col'>
-//             <span className='text-white font-medium mb-4'>Your email</span>
-//             <input
-//               type='email'
-//               name='email'
-//               value={form.email}
-//               onChange={handleChange}
-//               placeholder="What's your web address?"
-//               className='py-4 px-6 placeholder:text-red-400 text-white rounded-lg outline-none border-none font-medium opacity-70'
-//             />
-
-//           </label>
-//           <label className='flex flex-col'>
-//             <span className='text-white font-medium mb-4'>Your Message</span>
-//             <textarea
-//               rows={7}
-//               name='message'
-//               value={form.message}
-//               onChange={handleChange}
-//               placeholder='What you want to say?'
-//               className='py-4 px-6 placeholder:text-red-400 text-white rounded-lg outline-none border-none font-medium opacity-70'
-//             />
-//           </label>
-
-//           <button
-
-//             type='submit'
-//             onClick={playSound}
-//             className='py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-red-900 transition-transform transform hover:scale-105 '>
-//             {loading ? "Sending..." : "Send"}
-            
-//           </button>
-//           <audio id="a1" src="button_sound.mp3"></audio>
-//         </form>
-
-//       </motion.div>
-
-//       <motion.div
-//         variants={slideIn("right", "tween", 0.2, 1)}
-//         className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
-//       >
-//         <EarthCanvas />
-//       </motion.div>
-//     </div>
-//   );
-// };
-
-// export default SectionWrapper(Contact, "contact");
-
-import React from 'react';
-import { SectionWrapper } from "../hoc";
-import { styles } from "../styles";
-
-
-function Contact() {
+function Market_Info() {
+  // <div>Market_Info</div>
   return (
 
-    <div class="flex justify-center">
-      <div class="mx-auto text-center">
-        <h1 class="text-2xl font-bold mb-4">Add Information about your Co-Farmers</h1>
-        <div><p class="block mb-2">Tell us about your co-farmers and their farming practice.</p>
-        <p class="block mb-2">Share your experience with their products and the quality you have received.</p></div>
-      </div>
-    </div>
-  )
+      <section className={`relative w-full h-screen mx-auto`}>
+  
+        <div className="flex items-center justify-center h-screen">
+  
+          {/* <div className="bg-[#395C4D] p-4 rounded-3xl w-3/5 h-3/5 xs:h-1/4 sm:h-1/3 md:h-96 lg:h-1/2 xl:h-3/5 "> */}
+          
+            <div className='flex flex-wrap gap-20 items-center justify-between'>
+              <div>
+  
+                <div className='text-5xl font-light text-center'>Add Information about your Co-Farmers</div>
+  
+                <br></br>
+                <br></br>
+                <div className='text-2xl font-thin text-center'>Tell us about your co-farmers and their farming practices. Share your</div>
+                <div>
+                  <img className='absolute left-0 bottom-0' src={Leaf} alt='Leaf' style={{width: '500px', height: 'auto'}} />
+                </div>
+                <div>
+                  <img className='absolute right-0 bottom-0' src={cup} alt='cup' style={{width: '350px', height: 'auto'}} />
+                </div>
+                <div className='text-2xl font-thin text-center'>experience with their products and the quality you have recieved</div>
+                <div className='flex justify-center mt-10'>
+                <button className='bg-green-500 hover:bg-green-600 text-white py-4 px-10 rounded-full'>
+                  Enter
+                </button>
+
+                </div>
+
+              </div>
+
+            </div>
+  
+  
+        </div>
+      <Cards/>
+      </section>
+    )
 }
 
-export default SectionWrapper(Contact, "contact");
+export default Market_Info
