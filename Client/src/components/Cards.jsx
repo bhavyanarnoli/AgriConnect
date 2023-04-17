@@ -1,5 +1,6 @@
 import React from 'react';
 import farmer1 from "../assets/farmer1.png"
+import farmer2 from "../assets/farmer2.png"
 const Card = ({ color, author, content, img, numberOfstars, otherAuthor }) => {
     const stars = (numberOfstars) => {
         let arr = []
@@ -21,7 +22,7 @@ const Card = ({ color, author, content, img, numberOfstars, otherAuthor }) => {
             </div>
             <div className='bg-white relative w-1/2' >
                 <div className='bg-white h-full flex items-center flex-col justify-center'>
-                    <img className='max-w-[200px]' src={farmer1} />
+                    <img className='max-w-[200px]' src={img} />
                 </div>
                 <div className='absolute translate-x-5 -translate-y-full text-black'>{otherAuthor}</div>
             </div>
@@ -31,10 +32,10 @@ const Card = ({ color, author, content, img, numberOfstars, otherAuthor }) => {
 }
 function Cards() {
     return (
-        <div className="flex justify-evenly" style={{"background":"linear-gradient(77.81deg, #256A25 21.93%, #4F912C 77.64%)"}}>
+        <div className="flex justify-evenly" style={{"background":"transparent"}}>
             <Card color={`598216`} img={farmer1} numberOfstars={5} otherAuthor={`Rama`} author={`Marilee L.`} content={`Beautiful color, nice surface, environmentally responsible material and packaging. Very happy about this purchase.`} />
-            <Card color={`598216`} img={farmer1} numberOfstars={5} otherAuthor={`Sara Khan`} author={`Ric H.`} content={`Amazing qality and refined design.`} />
-            <Card color={`598216`} img={farmer1} numberOfstars={5} otherAuthor={`Rama`} author={`Emma D.`} content={`A very hardworkingand keen Farmer. Work on left half of the farm.`} />
+            <Card color={`598216`} img={farmer2} numberOfstars={5} otherAuthor={`Sara Khan`} author={`Ric H.`} content={`Amazing qality and refined design.`} />
+            <Card color={`598216`} img={farmer1} numberOfstars={5} otherAuthor={`Mira Bai`} author={`Emma D.`} content={`A very hardworkingand keen Farmer. Work on left half of the farm.`} />
         </div>
     );
 }
