@@ -41,6 +41,15 @@ function Market_Info() {
   const [reviewContent, setReviewContent] = useState('');
   const [reviewStars, setReviewStars] = useState(0);
 
+  const [rating, setRating] = useState(0);
+
+  const handleRatingChange = (event) => {
+    // Get the value of the selected radio button
+    const newRating = parseInt(event.target.value);
+    // Update the state with the new rating
+    setRating(newRating);
+  };
+
   useEffect(() => {
     console.log({ reviews });
   }, [reviews, setReviewWindow])
@@ -123,23 +132,23 @@ function Market_Info() {
                     }
                   }
                 />
-                <input className='rounded-xl p-5 bg-[#dcfc92] text-black' type='text' placeholder='Enter your stars'
-                  onChange={
-                    (e) => {
-                      setReviewStars(e.target.value);
-                    }
-                  }
-                />
+                <div className="rating rating-lg self-center my-5">
+                  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange" value={1} checked={rating==1} onChange={handleRatingChange}/>
+                  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange" value={2} checked={rating==2} onChange={handleRatingChange}/>
+                  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange" value={3} checked={rating==3} onChange={handleRatingChange}/>
+                  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange" value={4} checked={rating==4} onChange={handleRatingChange}/>
+                  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange" value={5} checked={rating==5} onChange={handleRatingChange}/>
+                </div>
                 <button className='bg-green-500 hover:bg-green-600 text-white py-4 px-10 rounded-full'
                   onClick={
                     (e) => {
                       setReviews([{
                         id: reviews.length + 1,
                         img: farmer1,
-                        numberOfstars: reviewStars,
+                        numberOfstars: rating,
                         otherAuthor: reviewAuthor, author: reviewName,
                         content: reviewContent
-                      },...reviews,])
+                      }, ...reviews,])
                       // alert('Review Submitted');
                       setReviewWindow(false);
                     }

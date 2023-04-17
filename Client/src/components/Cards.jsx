@@ -5,7 +5,7 @@ const Card = ({ color, author, content, img, numberOfstars, otherAuthor }) => {
     const stars = (numberOfstars) => {
         let arr = []
         for (let index = 0; index < numberOfstars; index++) {
-            arr.push(<img className='invert' src="https://img.icons8.com/ios-filled/50/null/star--v1.png"/>)
+            arr.push(<img className='invert' src="https://img.icons8.com/ios-filled/50/null/star--v1.png" />)
         }
         return arr;
     }
@@ -18,7 +18,15 @@ const Card = ({ color, author, content, img, numberOfstars, otherAuthor }) => {
                     </div>
                     <div>-{author}</div>
                 </div>
-                <div className='flex scale-50'>{stars(numberOfstars)}</div>
+                {/* <div className='flex scale-50'> */}
+                    <div className="rating">
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange" value={1} checked={numberOfstars == 1}/>
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange" value={2} checked={numberOfstars == 2}/>
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange" value={3} checked={numberOfstars == 3}/>
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange" value={4} checked={numberOfstars == 4}/>
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange" value={5} checked={numberOfstars == 5}/>
+                    </div>
+                {/* </div> */}
             </div>
             <div className='bg-white relative w-1/2' >
                 <div className='bg-white h-full flex items-center flex-col justify-center'>

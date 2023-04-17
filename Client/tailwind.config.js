@@ -15,6 +15,7 @@ module.exports = {
       "login_button": "#FFFFFF",
       "button_hover": "#6B911B",
       "black": "#000000",
+      "orange": "#fb923c",
     },
     extend: {
       colors: {
