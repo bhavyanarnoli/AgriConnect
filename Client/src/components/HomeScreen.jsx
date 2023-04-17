@@ -2,35 +2,27 @@ import { useState } from 'react';
 
 const HomeScreen = () => {
   const[weather,setweather] = useState();
-  const handleSubmit = async (event) => {
+  const  handleSubmit = async (event) =>{
     event.preventDefault();
-    const { weather } = event.target;
+    const {weather} = event.target;
     const w = weather.value;
     const params = {
       access_key: '8625ad28c97cb513f6631223b7fa474f',
       query: w
     }
-  
+    
     fetch(`http://api.weatherstack.com/current?${new URLSearchParams(params)}`)
       .then(response => response.json())
       .then(data => {
         console.log(data);
         console.log(`Current temperature in ${data.location.name} is ${data.current.temperature}℃`);
-        setweather(data.current.temperature);
-        let message = '';
-        if (data.current.temperature >= 20 && data.current.temperature < 25) {
-          message = 'Slightly Cold';
-        } else if (data.current.temperature >= 25 && data.current.temperature < 30) {
-          message = 'Slightly Hot';
-        } else if (data.current.temperature >= 30 && data.current.temperature <= 40) {
-          message = 'Really Hot';
-        } else if (data.current.temperature >= 10 && data.current.temperature < 20) {
-          message = 'Cold';
-        }
-        setweatherMessage(message);
+        setweather( data.current.temperature)
       }).catch(error => {
         console.log(error);
       });
+    
+    
+    
   }
    return (
 
@@ -46,7 +38,7 @@ const HomeScreen = () => {
 
               <div className='font-semibold'>Temperature</div>
               <div className='font-semibold'>in your area</div>
-              <div className='text-2xl font-light uppercase leading-[39px] tracking-[0.1rem]'>{!weather ? `Slightly Cool` : `${weatherMessage}`}</div>
+              <div className='text-2xl font-light uppercase leading-[39px] tracking-[0.1rem]'>Warm</div>
               <form onSubmit={handleSubmit} className='flex items-center py-4' >
                 <input name='weather' className='bg-transparent border-solid border-white border-2  rounded-md p-4 text-base text-white focus:outline-none' type="text" placeholder='' />
               </form>
@@ -60,6 +52,7 @@ const HomeScreen = () => {
         </div>
 
       </div>
+
     </section>
   )
 }
