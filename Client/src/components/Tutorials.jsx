@@ -155,8 +155,8 @@ function TutorialCard({ id, header, text, sub, temp, fert, pest, tech, img }) {
             <div className='w-2/3 border-b'>{pest}</div>
           </div>
           <div>
-            <p>Technologies</p>
-            <div className='w-2/3 border-b'>{tech}</div>
+            {/* <p>Technologies</p>
+            <div className='w-2/3 border-b'>{tech}</div> */}
           </div>
           <div className='w-2/3 p-3 mt-5 text-center border-2 rounded-xl'>
             <p>View Tutorial</p>
