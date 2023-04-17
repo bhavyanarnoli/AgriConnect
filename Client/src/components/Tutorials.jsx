@@ -11,7 +11,6 @@ function Tutorials({ language }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    // alert("Language changed to " + language);
     if (language === "English") {
       setData([
         {
