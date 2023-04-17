@@ -1,42 +1,36 @@
-// import React from 'react'
-
-// function HomeScreen() {
-//   return (
-//     <div>HomeScreen</div>
-//   )
-// }
-
-// export default HomeScreen
-import { motion } from 'framer-motion';
-import { styles } from '../styles'
 import { useState } from 'react';
-// import Spline from '@splinetool/react-spline';
-
-// import { fadeIn, textVariant } from '../utils/motion'
 
 const HomeScreen = () => {
   const[weather,setweather] = useState();
-  const  handleSubmit = async (event) =>{
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const {weather} = event.target;
+    const { weather } = event.target;
     const w = weather.value;
     const params = {
       access_key: '8625ad28c97cb513f6631223b7fa474f',
       query: w
     }
-    
+  
     fetch(`http://api.weatherstack.com/current?${new URLSearchParams(params)}`)
       .then(response => response.json())
       .then(data => {
         console.log(data);
         console.log(`Current temperature in ${data.location.name} is ${data.current.temperature}℃`);
-        setweather( data.current.temperature)
+        setweather(data.current.temperature);
+        let message = '';
+        if (data.current.temperature >= 20 && data.current.temperature < 25) {
+          message = 'Slightly Cold';
+        } else if (data.current.temperature >= 25 && data.current.temperature < 30) {
+          message = 'Slightly Hot';
+        } else if (data.current.temperature >= 30 && data.current.temperature <= 40) {
+          message = 'Really Hot';
+        } else if (data.current.temperature >= 10 && data.current.temperature < 20) {
+          message = 'Cold';
+        }
+        setweatherMessage(message);
       }).catch(error => {
         console.log(error);
       });
-    
-    
-    
   }
    return (
 
@@ -52,19 +46,13 @@ const HomeScreen = () => {
 
               <div className='font-semibold'>Temperature</div>
               <div className='font-semibold'>in your area</div>
-              <div className='text-2xl font-light uppercase leading-[39px] tracking-[0.1rem]'>Slightly Cool</div>
+              <div className='text-2xl font-light uppercase leading-[39px] tracking-[0.1rem]'>{!weather ? `Slightly Cool` : `${weatherMessage}`}</div>
               <form onSubmit={handleSubmit} className='flex items-center py-4' >
                 <input name='weather' className='bg-transparent border-solid border-white border-2  rounded-md p-4 text-base text-white focus:outline-none' type="text" placeholder='' />
-                {/* <button type='submit' className='px-2' >
-
-                <img className='invert' src="https://img.icons8.com/ios/50/null/arrow--v1.png" />
-
-
-                </button> */}
               </form>
 
             </div>
-            <div className='text-10xl scale-150 font-medium translate-x-1/4'>{ !weather ? `19°C` : `${weather}°C`}</div>
+            <div className='text-10xl scale-150 font-medium translate-x-1/4'>{ !weather ? `30°C` : `${weather}°C`}</div>
 
           </div>
 
@@ -72,61 +60,6 @@ const HomeScreen = () => {
         </div>
 
       </div>
-      {/* <div
-        className={`absolute inset-0 max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
-      >
-
-        <div
-          className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
-        >
-
-          <div className='flex flex-col justify-center items-center mt-5'>
-
-          </div>
-            <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[100%] w-max'>
-              <div >
-                <p className={`${styles.heroHeadText} text-left`}>
-                  Hi, I'm
-                </p>
-                <div className='flex justify-center w-full items-center flex-col'>
-                  <p className='text-white w-full text-4xl md:text-8xl uppercase tracking-wide '>
-                    Mahansh Aditya
-                  </p>
-                  <h2 className=' text-3xl lg:text-[25px] sm:text-[15px] xs:text-[10px] text-gray-400 font-thin'>
-                    Full-Stack Developer | Designer
-                  </h2>
-                </div>
-              </div>
-
-            </div>
-
-              <Spline scene="https://prod.spline.design/AXK9pMgh46IPcKfs/scene.splinecode" />
-        </div>
-      </div> */}
-
-      {/* <div className='absolute pt-10 xs:bottom-10 bottom-16  w-full flex justify-center items-center'>
-
-        <a href="#about">
-
-          <div className='w-[35px] h-[64px] rounded-3xl border-2 border-[#1B2822] flex justify-center items-start p-2'>
-
-            <motion.div
-              animate={{
-                y: [0, 24, 0]
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: 'loop'
-              }}
-              className='w-2 h-2 rounded-full bg-white mb-1'
-            />
-          </div>
-
-        </a>
-
-      </div> */}
-
     </section>
   )
 }
