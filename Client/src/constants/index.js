@@ -14,14 +14,17 @@ import {
     {
       id: "home",
       title: "Home",
+      link: "/",
     },
     {
       id: "tutorials",
       title: "Tutorial",
+      link : "/tutorials"
     },
     {
       id: "about",
       title: "About",
+      link : "/#about"
     },
     {
       id: "language",

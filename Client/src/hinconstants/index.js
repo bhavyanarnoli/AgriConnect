@@ -14,14 +14,20 @@ import {
     {
       id: "home",
       title: "शुरुआती पृष्ठ",
+      link: "/",
+
     },
     {
       id: "tutorials",
       title: "सीखने की विधि",
+      link : "/tutorials"
+
     },
     {
       id: "about",
       title: "हमारे बारे में",
+      link : "/#about"
+
     },
     {
       id: "language",
