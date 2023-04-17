@@ -17,7 +17,7 @@ function App() {
       <BaseRoutes>
       
         <Route path="/" element={<LandingPage language={language} />} />
-        <Route path= "/market-info" element={<Market_Info />} />
+        <Route path= "/market-info" element={<Carousel language={language} />} />
         <Route path= "/connect-with-farmers" element={<Contact />} />
         <Route path= "/tutorials" element={<Tutorials />} />
 
