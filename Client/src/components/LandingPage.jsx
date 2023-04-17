@@ -11,6 +11,7 @@ const LandingPage = ({ language }) => {
       <HomeScreen language={language} />
       <About language={language} />
       <FarmingForecast language={language} />
+      {/* <Tutorials language={language} /> */}
     </div>
     
   );

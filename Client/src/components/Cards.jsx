@@ -33,9 +33,9 @@ const Card = ({ color, author, content, img, numberOfstars, otherAuthor }) => {
 function Cards() {
     return (
         <div className="flex justify-evenly" style={{"background":"transparent"}}>
-            <Card color={`598216`} img={farmer1} numberOfstars={5} otherAuthor={`Rama`} author={`Marilee L.`} content={`Beautiful color, nice surface, environmentally responsible material and packaging. Very happy about this purchase.`} />
-            <Card color={`598216`} img={farmer2} numberOfstars={5} otherAuthor={`Sara Khan`} author={`Ric H.`} content={`Amazing qality and refined design.`} />
-            <Card color={`598216`} img={farmer1} numberOfstars={5} otherAuthor={`Mira Bai`} author={`Emma D.`} content={`A very hardworkingand keen Farmer. Work on left half of the farm.`} />
+            <Card color="598216" img={farmer1} numberOfstars={5} otherAuthor={`Rama`} author={`Marilee L.`} content={`Beautiful color, nice surface, environmentally responsible material and packaging. Very happy about this purchase.`} />
+            <Card color="598216" img={farmer2} numberOfstars={5} otherAuthor={`Sara Khan`} author={`Ric H.`} content={`Amazing qality and refined design.`} />
+            <Card color="598216" img={farmer1} numberOfstars={5} otherAuthor={`Mira Bai`} author={`Emma D.`} content={`A very hardworkingand keen Farmer. Work on left half of the farm.`} />
         </div>
     );
 }

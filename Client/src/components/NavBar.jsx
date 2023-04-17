@@ -87,7 +87,7 @@ const NavBar = ({language,onLanguageChange}) => {
             <div className="group"> <a href={`#${nav.id}`} className="group-hover:opacity-100"> <span className="text-white opacity-100 group-hover:text-white"></span>{nav.title} </a> </div>
               </li>) : 
               <div>
-                <button className="text-white border-2 border-login_button rounded-2xl px-4 py-1 hover:text-button_hover  hover:cursor-pointer transition-all" onClick={handleButtonClick}>
+                <button className="text-white border-2 border-login_button rounded-2xl px-4 py-1 hover:text-button_hover hover:border-white  hover:cursor-pointer transition-all" onClick={handleButtonClick}>
                   <div>{language}</div>
                 </button>
             </div>

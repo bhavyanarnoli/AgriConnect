@@ -11,7 +11,7 @@ export default function CarouselWrapper() {
             <div className='flex flex-col justify-start'>
                 <div className='text-5xl py-8'>Real-Market Information</div>
                 <div className='text-2xl py-8'>Information bought from credible sources, <br /> rated from real customers who used this site</div>
-                <button className='text-left w-max p-2 rounded-3xl underline my-4'> Check out more reviews</button>
+                <button className='text-left w-max p-2 border-2 rounded-3xl underline my-4'> Check out more reviews</button>
             </div>
             <Carousel>
                     <Card price={80} noOfstars={2} title={'Tomato'} content='

@@ -3,7 +3,7 @@ import Loamy from '../assets/Loamy.png'
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 import { useState, useEffect } from 'react'
 
-function Tutorials({language}) {
+function Tutorials({ language }) {
   console.log(language);
   const [weather, setWeather] = useState(null)
   const [prev, setprev] = useState(1)
@@ -11,7 +11,8 @@ function Tutorials({language}) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    if(language === "English"){
+    // alert("Language changed to " + language);
+    if (language === "English") {
       setData([
         {
           id: 1,
@@ -24,8 +25,41 @@ function Tutorials({language}) {
           tech: "loda",
           img: Loamy,
         },
+        {
+          id: 2,
+          header: "Clay Soul",
+          text: "Clay soil is ideal for growing several crops such as wheat, sugarcane, cotton, pulses, and oilseeds.",
+          sub: "Water everyday so that the roots appear wet all the time.",
+          temp: "loda",
+          fert: "loda",
+          pest: "loda",
+          tech: "loda",
+          img: Loamy
+        },
+        {
+          id: 3,
+          header: "Sandy Soul",
+          text: "Sandy soil is ideal for growing several crops such as wheat, sugarcane, cotton, pulses, and oilseeds.",
+          sub: "Water everyday so that the roots appear wet all the time.",
+          temp: "loda",
+          fert: "loda",
+          pest: "loda",
+          tech: "loda",
+          img: Loamy
+        },
+        {
+          id: 4,
+          header: "Silt Soul",
+          text: "Silt soil is ideal for growing several crops such as wheat, sugarcane, cotton, pulses, and oilseeds.",
+          sub: "Water everyday so that the roots appear wet all the time.",
+          temp: "loda",
+          fert: "loda",
+          pest: "loda",
+          tech: "loda",
+          img: Loamy
+        }
       ]);
-    } else if (language === "Hindi"){
+    } else if (language === "अंग्रेज़ी") {
       setData([
         {
           id: 1,
@@ -40,7 +74,7 @@ function Tutorials({language}) {
         },
       ]);
     }
-  }, [language]);
+  }, [language, data]);
 
   return (
     <div
@@ -79,7 +113,7 @@ function Tutorials({language}) {
       </div>
       <a href={`#${next}`} className="" onClick={
         () => {
-          if (next <data.length) {
+          if (next < data.length) {
             setnext(next + 1)
           }
           else {
@@ -95,7 +129,7 @@ function Tutorials({language}) {
 
 export default Tutorials
 
-function TutorialCard({ id, header, text, sub, temp, fert, pest, tech , img}) {
+function TutorialCard({ id, header, text, sub, temp, fert, pest, tech, img }) {
   return (
     <div id={id} className='flex carousel-item relative  w-full items-center justify-center h-3/4'>
       <div className="p-10 w-1/3 ">

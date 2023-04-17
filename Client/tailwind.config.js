@@ -9,12 +9,17 @@ module.exports = {
     colors:{
       primary: "#ffffff", 
       secondary: "#FFFFFF",
+      "green-500": "rgb(34 197 94)",
+      "green-600": "rgb(22 163 74)",
+      "white": "#ffffff",
+      "login_button": "#FFFFFF",
+      "button_hover": "#6B911B",
     },
     extend: {
       colors: {
         button_hover: "#6B911B",
         primary: "#ffffff", 
-        secondary: "#FFFFFF",  
+        secondary: "#FFFFFF",
       },
       boxShadow: {
         card: "0px 35px 120px -15px #013220",
@@ -40,19 +45,24 @@ module.exports = {
       },
     },
   },
+  // plugins: [],
   plugins: [require("daisyui")],
-  daisyui: {
+  // daisyui: {
+    // styled:false,
+    // base:false,
+    // prefix: "pre",
     // themes: [
     //     {
     //       mytheme: {
-    //         primary: "#ffffff",
-    //         secondary: "#ffffff",
-    //         accent: "#ffffff",
-    //         neutral: "#ffffff",
-    //         "base-100": "#ffffff",
+    //         // primary: "#ffffff",
+    //         // secondary: "#ffffff",
+    //         // accent: "#ffffff",
+    //         // neutral: "#ffffff",
+    //         // "base-100": "#ffffff",
+    //         "green-500": "#6B911B",
     //       },
     //     },
     // ],
-  },
+  // },
 
 };
