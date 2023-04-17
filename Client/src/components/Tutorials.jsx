@@ -28,7 +28,7 @@ function Tutorials({ language }) {
           header: "Clay Soil",
           text: "Clay soil is ideal for growing several crops such as wheat, sugarcane, cotton, pulses, and oilseeds.",
           sub: "Water everyday so that the roots appear wet all the time.",
-          temp: "50°F to 75°F (10°C to 24°C",
+          temp: "50°F to 75°F (10°C to 24°C)",
           fert: "Organic Compost, Pine Bark, Composted Leaves, Gypsum",
           pest: "Chlorothalonil, Fludioxonil, Cyprodinil, Boscalid",
           img: Loamy
@@ -63,9 +63,38 @@ function Tutorials({ language }) {
           text: "दोमट मिटटी गेहूं, गन्ना, कपास, दालें और तेलसीधे जैसी कई फसलों के लिए आदर्श होती है।",
           sub: "हर दिन पानी दीजिए ताकि जड़ें हमेशा गीली नजर आएं।",
           temp: "55°F to 80°F (13°C to 27°C)",
-          fert: "loda",
+          fert: "अमोनियम नाइट्रेट, यूरिया और अमोनियम सल्फेट ट्रिपल सुपरफॉस्फेट और डायमोनियम फॉस्फेट पोटेशियम सल्फेट और पोटेशियम क्लोराइड जैविक खाद",
           pest: "मेथोमिल इमिडाक्लोप्रिड,प्रोपिकोनाज़ोल,एज़ोक्सिस्ट्रोबिन,रेत भरी मिट्टी",
-          tech: "loda",
+          img: Loamy,
+        },
+        {
+          id: 2,
+          header: "चिकनी मिट्टी",
+          text: "मिट्टी की मिट्टी कई फसलों जैसे गेहूं, गन्ना, कपास, दालें और तिलहन उगाने के लिए आदर्श है।",
+          sub: "पानी हर रोज ताकि जड़ें हर समय गीली दिखाई दें।",
+          temp: "50°F to 75°F (10°C to 24°C)",
+          fert: "जैविक खाद, देवदार की छाल, खाद की पत्तियां, जिप्सम",
+          pest: "क्लोरोथालोनिल, फ्लूडाइऑक्सोनिल, साइप्रोडिनिल, बोस्केलिड",
+          img: Loamy,
+        },
+        {
+          id: 3,
+          header: "रेत भरी मिट्टी",
+          text: "रेतीली मिट्टी गेहूं, गन्ना, कपास, दालें और तिलहन जैसी कई फसलों को उगाने के लिए आदर्श है।",
+          sub: "पानी हर रोज ताकि जड़ें हर समय गीली दिखाई दें।",
+          temp: "16°C to 29°C",
+          fert: "खाद और खाद",
+          pest: "मेथोमिल, इमिडाक्लोप्रिड, प्रोपिकोनाज़ोल, एज़ोक्सिस्ट्रोबिन",
+          img: Loamy,
+        },
+        {
+          id: 4,
+          header: "सिल्ट मिट्टी",
+          text: "गाद मिट्टी कई फसलों जैसे गेहूं, गन्ना, कपास, दालें और तिलहन उगाने के लिए आदर्श है।",
+          sub: "पानी हर रोज ताकि जड़ें हर समय गीली दिखाई दें।",
+          temp: "55°F to 80°F (13°C to 27°C)",
+          fert: "अमोनियम सल्फेट, यूरिया, कैल्शियम नाइट्रेट",
+          pest: "मेथोमिल, इमिडाक्लोप्रिड, प्रोपिकोनाज़ोल, एज़ोक्सिस्ट्रोबिन",
           img: Loamy,
         },
       ]);
@@ -132,9 +161,9 @@ function TutorialCard({ id, header, text, sub, temp, fert, pest, tech, img }) {
         <img src={img} className="object-fill brightness-50 hover:animate-brightness-50-to-100" />
       </div>
       <div className="flex flex-col h-full font-light w-1/4 pr-10">
-        <div className="p-4">
+        {/* <div className="p-4">
           <p className="text-3xl">Suggestions</p>
-        </div>
+        </div> */}
         <div className="p-4 flex flex-col gap-4 text-lg">
           <p className="text-5xl font-normal">{header}</p>
           <p>{text}</p>
