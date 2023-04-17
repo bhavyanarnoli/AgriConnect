@@ -9,7 +9,7 @@ import mostly_sunny_image from "./FarmingForcast/images/mostly-sunny.png";
 import partly_cloudy_image from "./FarmingForcast/images/partly-cloudy.png";
 import sunny_audio from "./FarmingForcast/audio/sunny.mp3";
 import partly_cloudy_audio from "./FarmingForcast/audio/partly_cloudy.mp3";
-import mostly_sunny_audio from "./FarmingForcast/audio/sunny.mp3";
+import mostly_sunny_audio from "./FarmingForcast/audio/mostly_sunny.mp3";
 
 
 export {
@@ -23,6 +23,6 @@ export {
   mostly_sunny_image,
   partly_cloudy_image,
   sunny_audio,
-  partly_cloudy_audio,
   mostly_sunny_audio,
+  partly_cloudy_audio,
 };
