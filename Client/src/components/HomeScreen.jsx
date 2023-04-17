@@ -9,16 +9,34 @@
 // export default HomeScreen
 import { motion } from 'framer-motion';
 import { styles } from '../styles'
-
+import { useState } from 'react';
 // import Spline from '@splinetool/react-spline';
 
 // import { fadeIn, textVariant } from '../utils/motion'
 
 const HomeScreen = () => {
-  const handleSubmit = (event) =>{
+  const[weather,setweather] = useState();
+  const  handleSubmit = async (event) =>{
     event.preventDefault();
     const {weather} = event.target;
-    console.log(weather.value);
+    const w = weather.value;
+    const params = {
+      access_key: '8625ad28c97cb513f6631223b7fa474f',
+      query: w
+    }
+    
+    fetch(`http://api.weatherstack.com/current?${new URLSearchParams(params)}`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        console.log(`Current temperature in ${data.location.name} is ${data.current.temperature}℃`);
+        setweather( data.current.temperature)
+      }).catch(error => {
+        console.log(error);
+      });
+    
+    
+    
   }
    return (
 
@@ -46,7 +64,7 @@ const HomeScreen = () => {
               </form>
 
             </div>
-            <div className='text-10xl scale-150 font-medium translate-x-1/4'>19°C</div>
+            <div className='text-10xl scale-150 font-medium translate-x-1/4'>{ !weather ? `19°C` : `${weather}°C`}</div>
 
           </div>
 
