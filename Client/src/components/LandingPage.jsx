@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomeScreen, About, FarmingForecast } from './index';
+import { HomeScreen, About, FarmingForecast, Tutorials } from './index';
 
 const LandingPage = ({ language }) => {
   // console.log(`Current language: ${language}. I am in landingPage.jsx`);
@@ -11,7 +11,7 @@ const LandingPage = ({ language }) => {
       <HomeScreen language={language} />
       <About language={language} />
       <FarmingForecast language={language} />
-
+      <Tutorials/>
     </div>
     
   );

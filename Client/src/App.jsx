@@ -29,7 +29,7 @@ function App() {
   };
 
   return (
-    <div className='bg-gradient-to-br from-green-800 to-teal-700' >
+    <div className='bg-gradient-to-br from-[#256A25] to-[#4F902C]' >
       <NavBar language={language} onLanguageChange={handleLanguageChange} />
       <BaseRoutes>
       
