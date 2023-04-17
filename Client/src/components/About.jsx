@@ -25,7 +25,7 @@ const ServiceCard = ({ index, title, icon }) => (
           scale: 1,
           speed: 450,
         }}
-        className='bg-primary rounded-[20px] py-5 px-12 h-full flex justify-evenly items-center flex-col'
+        className='rounded-[20px] py-5 px-12 h-full flex justify-evenly items-center flex-col'
       >
         <h3 className='text-white text-[20px] py-4 font-light text-center'>
           {title}
