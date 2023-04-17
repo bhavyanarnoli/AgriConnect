@@ -5,6 +5,8 @@ import 'react-vertical-timeline-component/style.min.css'
 
 import {styles} from '../styles'
 import { experiences } from "../constants";
+import {experiences as englishexperiences} from '../constants';
+import {experiences as hindiexperiences} from '../hinconstants';
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
@@ -78,15 +80,21 @@ const ExperienceCard = ({ experience }) => {
   );
 };
 
-const FarmingForecast = () => {
+const FarmingForecast = ({ language }) => {
+
+  const experiences = language === 'English' ? englishexperiences : hindiexperiences;
+  const sectionHeadText = language === 'English' ? 'Farming ForeCast:' : 'खेती का अंदाज़ा';
+  const sectionSubText = language === 'English' ? 'Plan Ahead' : 'आगे की योजना ';
+
   return (
     <>
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionHeadText} text-center`}>
-          Farming ForeCast:
+        {sectionHeadText}
         </p>
         <h2 className={`${styles.sectionHeadText} font-semi-bold text-center`}>
-          Plan Ahead
+        {sectionSubText}
+
         </h2>
       </motion.div>
 

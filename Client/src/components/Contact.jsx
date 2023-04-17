@@ -145,12 +145,23 @@
 // };
 
 // export default SectionWrapper(Contact, "contact");
-import React from 'react'
+
+import React from 'react';
+import { SectionWrapper } from "../hoc";
+import { styles } from "../styles";
+
 
 function Contact() {
   return (
-    <div>Contact</div>
+
+    <div class="flex justify-center">
+      <div class="mx-auto text-center">
+        <h1 class="text-2xl font-bold mb-4">Add Information about your Co-Farmers</h1>
+        <div><p class="block mb-2">Tell us about your co-farmers and their farming practice.</p>
+        <p class="block mb-2">Share your experience with their products and the quality you have received.</p></div>
+      </div>
+    </div>
   )
 }
 
-export default Contact
+export default SectionWrapper(Contact, "contact");

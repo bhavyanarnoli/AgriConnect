@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
-import { navLinks } from "../constants";
+// import { navLinks } from "../constants";
+import {navLinks as englishnavLink} from '../constants';
+import {navLinks as hindinavLink} from '../hinconstants';
 import { logo, menu, close } from "../assets";
 
 const NavBar = ({language,onLanguageChange}) => {
+
   const handleButtonClick = () => {
     onLanguageChange();
   };
+  
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -47,6 +51,8 @@ const NavBar = ({language,onLanguageChange}) => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navLinks = language === 'English' ? englishnavLink : hindinavLink;
 
   return (
     <nav

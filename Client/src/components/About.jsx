@@ -15,7 +15,7 @@ const ServiceCard = ({ index, title, icon }) => (
 <Tilt className='xs:w-[300px] w-full h-[400px]'>
   <Link to={title === 'Real-Time Market Information' ? '/market-info' : title === 'Connect With Farmers' ? '/connect-with-farmers' : '/tutorials'}>
     <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+      // variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className='w-full p-4 rounded-[20px] shadow-card'
       style={{ maxWidth: "350px", margin: "auto", height: "100%" }}
     >
@@ -45,15 +45,14 @@ const ServiceCard = ({ index, title, icon }) => (
 const About = ({ language }) => {
   console.log(`Current language: ${language}. I am in About.jsx`);
   const services = language === 'English' ? englishServices : hindiServices;
-  // console.log(`current services ${services}`);
-  console.log(services);
+  const sectionHeadText = language === 'English' ? 'WHAT WE\'RE PROVIDING' : 'हम क्या प्रदान कर रहे हैं';
   
   return (
     <>
 
     <motion.div variants={textVariant()}>
       <p className ={styles.sectionHeadText}>
-      WHAT WE'RE PROVIDING</p>
+      {sectionHeadText}</p>
 
     </motion.div>
     <div className='mt-20 flex flex-wrap gap-20'>

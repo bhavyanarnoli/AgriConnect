@@ -24,7 +24,7 @@ function App() {
   const [language, setLanguage] = useState('English');
 
   const handleLanguageChange = () => {
-    setLanguage(language === 'English' ? 'Hindi' : 'English');
+    setLanguage(language === 'English' ? 'अंग्रेज़ी' : 'English');
     // console.log(`Current language: ${language}. I am in app.jsx`);
   };
 
@@ -35,7 +35,7 @@ function App() {
       
         <Route path="/" element={<LandingPage language={language} />} />
         <Route path= "/market-info" element={<Market_Info />} />
-        <Route path= "/contact-with-farmers" element={<Contact />} />
+        <Route path= "/connectt-with-farmers" element={<Contact />} />
         <Route path= "/tutorials" element={<Tutorials />} />
 
 
