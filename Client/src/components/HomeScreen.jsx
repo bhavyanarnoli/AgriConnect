@@ -50,7 +50,7 @@ const HomeScreen = () => {
 
             <div className='text-[54px] -translate-x-1/4'>
 
-              <div className='font-semibold'>Temprature</div>
+              <div className='font-semibold'>Temperature</div>
               <div className='font-semibold'>in your area</div>
               <div className='text-2xl font-light uppercase leading-[39px] tracking-[0.1rem]'>Slightly Cool</div>
               <form onSubmit={handleSubmit} className='flex items-center py-4' >

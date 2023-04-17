@@ -17,12 +17,11 @@ function Tutorials({ language }) {
         {
           id: 1,
           header: "Loamy Soil",
-          text: "Loamy soil is ideal for growing several crops such as wheat, sugarcane, cotton, pulses, and oilseeds.",
+          text: "Loamy soil is  one of the most desirable soil types for gardening and farming because it provides an ideal environment for plant growth",
           sub: "Water everyday so that the roots appear wet all the time.",
-          temp: "loda",
-          fert: "loda",
-          pest: "loda",
-          tech: "loda",
+          temp: "55°F to 80°F (13°C to 27°C)",
+          fert: "ammonium nitrate, urea, and ammonium sulfate",
+          pest: "Glyphosate,Chlorpyrifos, Metolachlor, Trifluralin",
           img: Loamy,
         },
         {
@@ -30,10 +29,9 @@ function Tutorials({ language }) {
           header: "Clay Soul",
           text: "Clay soil is ideal for growing several crops such as wheat, sugarcane, cotton, pulses, and oilseeds.",
           sub: "Water everyday so that the roots appear wet all the time.",
-          temp: "loda",
+          temp: "50°F to 75°F (10°C to 24°C",
           fert: "loda",
-          pest: "loda",
-          tech: "loda",
+          pest: "Chlorothalonil,Fludioxonil,Cyprodinil,Boscalid",
           img: Loamy
         },
         {
@@ -41,9 +39,9 @@ function Tutorials({ language }) {
           header: "Sandy Soul",
           text: "Sandy soil is ideal for growing several crops such as wheat, sugarcane, cotton, pulses, and oilseeds.",
           sub: "Water everyday so that the roots appear wet all the time.",
-          temp: "loda",
+          temp: "16°C to 29°C",
           fert: "loda",
-          pest: "loda",
+          pest: "Methomyl,Imidacloprid,Propiconazole,Azoxystrobin",
           tech: "loda",
           img: Loamy
         },
@@ -52,12 +50,13 @@ function Tutorials({ language }) {
           header: "Silt Soul",
           text: "Silt soil is ideal for growing several crops such as wheat, sugarcane, cotton, pulses, and oilseeds.",
           sub: "Water everyday so that the roots appear wet all the time.",
-          temp: "loda",
+          temp: "55°F to 80°F (13°C to 27°C)",
           fert: "loda",
-          pest: "loda",
+          pest: "Methomyl,Imidacloprid,Propiconazole,Azoxystrobin",
           tech: "loda",
           img: Loamy
         }
+
       ]);
     } else if (language === "अंग्रेज़ी") {
       setData([
@@ -66,9 +65,9 @@ function Tutorials({ language }) {
           header: "दोमट मिटटी",
           text: "दोमट मिटटी गेहूं, गन्ना, कपास, दालें और तेलसीधे जैसी कई फसलों के लिए आदर्श होती है।",
           sub: "हर दिन पानी दीजिए ताकि जड़ें हमेशा गीली नजर आएं।",
-          temp: "loda",
+          temp: "55°F to 80°F (13°C to 27°C)",
           fert: "loda",
-          pest: "loda",
+          pest: "मेथोमिल इमिडाक्लोप्रिड,प्रोपिकोनाज़ोल,एज़ोक्सिस्ट्रोबिन,रेत भरी मिट्टी",
           tech: "loda",
           img: Loamy,
         },
