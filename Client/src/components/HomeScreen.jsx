@@ -45,6 +45,7 @@ const HomeScreen = ({language}) => {
 
               <div className='font-semibold'>{temp}</div>
               <div className='font-semibold'>{area}</div>
+              <br></br>
               {/* <div className='text-2xl font-light uppercase leading-[39px] tracking-[0.1rem]'>{!weather ? `Sunny` : `${weatherMessage}`}</div> */}
               <form onSubmit={handleSubmit} className='flex items-center py-4' >
                 <input name='weather' className='bg-transparent border-solid border-white border-2  rounded-md p-4 text-base text-white focus:outline-none' type="text" placeholder='' />
