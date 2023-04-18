@@ -2,27 +2,31 @@ import { useState } from 'react';
 
 const HomeScreen = ({language}) => {
   const[weather,setweather] = useState();
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "897f014554msh60164b147e07c69p14eb32jsna8d64672e82a",
+      "X-RapidAPI-Host": "weather-by-api-ninjas.p.rapidapi.com",
+    },
+  };
+
   const  handleSubmit = async (event) =>{
     event.preventDefault();
     const {weather} = event.target;
     const w = weather.value;
-    const params = {
-      access_key: '8625ad28c97cb513f6631223b7fa474f',
-      query: w
-    }
     
-    fetch(`http://api.weatherstack.com/current?${new URLSearchParams(params)}`)
-      .then(response => response.json())
-      .then(data => {
+    fetch(
+      `https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=${w}`,
+      options
+    )
+      .then((response) => response.json())
+      .then((data) => {
         console.log(data);
-        console.log(`Current temperature in ${data.location.name} is ${data.current.temperature}℃`);
-        setweather( data.current.temperature)
-      }).catch(error => {
+        setweather(data.temp);
+      })
+      .catch((error) => {
         console.log(error);
       });
-    
-    
-    
   }
 
   const temp = language === "English" ? "Temperature" : "तापमान";
